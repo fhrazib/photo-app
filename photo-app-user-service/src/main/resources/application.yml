@@ -3,6 +3,9 @@ spring:
     name: 'users-ws'
   config:
     import: optional:file:.env[.properties]
+  devtools:
+    restart:
+      enabled: true
 
 eureka:
   client:
@@ -12,14 +15,7 @@ eureka:
     prefer-ip-address: true
 
 server:
-  port: 9393
+  port: 0 # setting port to '0' will give you dynamic port numbers.
+          # It's important if you want to run multiple instances of this user-service
   servlet:
     context-path: /users-ws
-
-management:
-  security.enabled: false
-  endpoint.health.show-details: always
-
-endpoints:
-  enabled: false
-  health.enabled: true
