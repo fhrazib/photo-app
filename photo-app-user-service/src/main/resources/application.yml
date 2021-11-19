@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: 'users-ws'
+  config:
+    import: optional:file:.env[.properties]
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_DEFAULT_ZONE}
+  instance:
+    prefer-ip-address: true
+
+server:
+  port: 9393
+  servlet:
+    context-path: /users-ws
+
+management:
+  security.enabled: false
+  endpoint.health.show-details: always
+
+endpoints:
+  enabled: false
+  health.enabled: true
