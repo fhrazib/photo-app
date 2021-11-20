@@ -1,6 +1,6 @@
 spring:
   application:
-    name: 'user-account-managements-ws'
+    name: user-account-managements-ws
   config:
     import: optional:file:.env[.properties]
   devtools:
@@ -16,5 +16,3 @@ eureka:
 
 server:
   port: 0
-  servlet:
-    context-path: /user-account-managements-ws
